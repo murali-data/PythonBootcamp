@@ -19,9 +19,7 @@ user_spirit_animal=input("enter your spirit animal:")
 #get user love to doing
 user_loveto_doing=input("enter one thing you love doing:\n")
 personality_code=user_name[:2].upper() + str(user_age)[-1] + user_spirit_animal[0] + user_favorite_colour[0]
-
 print("=" * 140)
-
 print("Let's discover who you really are with some fun data magic!")
 print("=" * 140)
 print("Scanning colors, foods, and animal energies...")
@@ -44,7 +42,6 @@ elif 18 <= user_age <= 30:
 elif user_age > 30:
    Wise_Owel="Wise Owl"
    print(f"🧩You belong to the {Wise_Owel} tribe.")
-
 print(f"🔐 Your Secret Personality Code is: 💡 {personality_code}")
 
 
