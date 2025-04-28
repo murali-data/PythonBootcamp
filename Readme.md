@@ -3,7 +3,10 @@ Activate
 Install all dependencies 
 write your code and Execute
 
-python3 -m venv name_of _project.venv
+python3 -m venv name_of_project.venv
+firstproject\scripts\activate
+
+
 
 Process flow
 
