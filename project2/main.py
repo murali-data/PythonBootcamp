@@ -1,3 +1,6 @@
+import time
+
+
 print("Interactive Symptom Checker")
 print("👋 Hello there! Let's check how you're doing today.")
 
@@ -22,36 +25,48 @@ Mood=input("How do you feel today? (happy/sad/angry/anxious/calm/irritable): ").
 Pre_existing_conditions=input("Do you have any pre-existing conditions? (yes/no): ").lower()
 #Risk Scoring Logic
 
-if  Body_emperature >= 102  and  Main_symptoms["Fever"]or Number_of_sick_day > 3:
-    print("+3 points")
+if  Body_emperature >= 102  and  Main_symptoms["Fever"] or Number_of_sick_day > 3:
+    health_point1=2
 elif age >= 60 and Main_symptoms["Fever"]:
-    print("+2 points")
-elif Main_symptoms["Cough"]>= 5:
-    print("+2 points")
-elif Main_symptoms["Fatigue"]== age> 30:
-     print("+2 points")  
+    health_point2=2
+elif Number_of_sick_day >= 5 and Main_symptoms["Cough"]:
+    health_point3=2
+elif age> 30 and Main_symptoms["Fatigue"]:
+    health_point4=2 
 elif Main_symptoms["Headache"] and Body_emperature > 100:
-     print("+2 points") 
+    health_point5=2 
 elif Main_symptoms["Chest pain"]:
-    print("+2 points")
+    health_point6=2
 elif Main_symptoms["Breathlessness"]:
-    print("+4 points")
+  health_poin7t=4
 elif Smoking_habit== "yes":
-    print("+2 points")
+    health_point8=2
 elif sleep_hours < 6:
-    print("+1 points")
+  health_point9=1
 elif Mood== "anxious" or "irritable" or "sad":
-    print("+1 points")
+     health_point10=1
 elif Pre_existing_conditions== "yes":
-    print("+2 points")
+    health_point11=2
 else:
     print("No points")
 
     #📊 4. Health Risk Result
- health_risk_score = str(sleep_hours)+str(Pre_existing_conditions)+str(Smoking_habit)+str(Main_symptoms)
-if health_risk_score >= 3:
+    health_point =health_point1 + health_point2+health_point3+health_point4+health_point5+health_point6+health_point7+health_point8+health_point9+health_point10+health_point11
+if health_point >= 3:
     print("🟢 Low Risk.")
-elif health_risk_score ==4 < 6:
+elif health_point ==4 < 6:
     print("🟡 Medium Risk.")
-elif health_risk_score >= 7:
+elif health_point >= 7:
     print("🔴 High Risk.")
+
+
+
+
+
+print(f"Processing your input data.......")
+time.sleep(2)
+
+print(f"Your Health Summary for {name}:")
+print(f"Name: {name}")
+print(f"{health_point}: Monitor closely. Seek advice if it continues.")
+print(f"✅ Thank you {name} for using QuickHealth Pro Max. Get well soon! 💙")
